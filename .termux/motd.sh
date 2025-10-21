@@ -1,0 +1,1 @@
+cat ~/dotfiles/plan
