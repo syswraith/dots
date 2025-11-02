@@ -17,11 +17,8 @@ alias ctrlc="ssh fey@ctrl-c.club"
 # Package specific
 alias bb="brave"
 alias cclip="wl-copy"
-<<<<<<< HEAD
 alias cdtemp='cd $(mktemp -d -p ~/code/)'
-=======
 alias cdtemp='cd $(mktemp -d)'
->>>>>>> 9f383b05e89f3875d38c51e643c5b912aecf13fe
 alias gittt="git add . && git commit -m \"$(date)\" && git push"
 alias gpom="git pull origin main"
 alias ccp="g++ -std=c++20"
@@ -53,15 +50,6 @@ PS1='\$ '
 HISTTIMEFORMAT="%F %T "
 gh="https://github.com/syswraith"
 
-<<<<<<< HEAD
-=======
-vi() {
-  local file
-  file=$(find ~/Documents ~/Downloads ~/Public -type f | fzf) || return
-  [ -n "$file" ] && nvim "$file"
-}
-
->>>>>>> 9f383b05e89f3875d38c51e643c5b912aecf13fe
 # For hassle-free creation of venvs in python
 pyvenv() {
   if [[ "$1" == "on" ]]; then
@@ -88,7 +76,6 @@ backlight() {
 export PATH="$PATH:/home/syswraith/.local/bin"
 
 export YDOTOOL_SOCKET="$HOME/.ydotool_socket"
-<<<<<<< HEAD
 export PATH="$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH"
 
 # Android SDK
@@ -101,5 +88,3 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 
 # Cordova (installed via Bun)
 export PATH=$PATH:/home/syswraith/.bun/bin
-=======
->>>>>>> 9f383b05e89f3875d38c51e643c5b912aecf13fe
