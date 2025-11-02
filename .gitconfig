@@ -9,3 +9,5 @@
 	name = syswraith
 [commit]
 	verbose = true
+[color]
+	ui = auto
