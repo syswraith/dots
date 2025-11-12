@@ -28,8 +28,10 @@ alias lstpkgs="pacman -Qei | awk '/^Name/ { name=\$3 } /^Groups/ { if ( \$3 != \
 alias ccc="gcc -g -o a.out"
 alias pl="perl"
 alias pp="python3"
-alias vim='nvim'
+alias vi='nvim'
+alias cat='bat'
 alias bathelp='bat --plain --language=help'
+alias open='xdg-open'
 
 colossus() { rga $(printf -- '-e %q ' "$@") ~/Documents/colossus/; }
 help() { "$@" --help 2>&1 | bathelp; }
