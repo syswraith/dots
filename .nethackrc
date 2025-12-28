@@ -1,3 +1,5 @@
+OPTIONS=role:Wizard, race:Elf, gender:male, align:chaotic, pettype:cat, petname:catd
+
 OPTIONS=!bones
 
 #OPTIONS=blind
@@ -6,7 +8,7 @@ OPTIONS=!bones
 
 #curses things
 OPTIONS=windowtype:curses
-OPTIONS=windowborders:3
+OPTIONS=windowborders:2
 OPTIONS=perm_invent
 
 OPTIONS=IBMgraphics,color,number_pad:1,suppress_alert:3.4.3,!cmdassist

@@ -25,7 +25,6 @@ alias ccp="g++ -std=c++20"
 alias ifconfig="ip addr" # net-tools is depreciated, so an illegal workaround
 alias lstpkgs="pacman -Qei | awk '/^Name/ { name=\$3 } /^Groups/ { if ( \$3 != \"base\" && \$3 != \"base-devel\" ) { print name } }'"
 
-alias ccc="gcc -g -o a.out"
 alias pl="perl"
 alias pp="python3"
 alias vi='nvim'
