@@ -23,7 +23,7 @@ set $browser brave
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/gruvbg.png fill
+output * bg /home/syswraith/.config/sway/wallpaper.png fill
 
 #
 # Example configuration:

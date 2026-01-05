@@ -14,8 +14,15 @@ alias ll='ls -al --color=auto'
 alias telehack="ssh rflash@telehack.com -p 6668"
 alias ctrlc="ssh fey@ctrl-c.club"
 
+# Browser shortcuts
+alias tw="flatpak run com.brave.Browser https://x.com"
+alias ig="flatpak run com.brave.Browser https://instagram.com"
+alias wa="flatpak run com.brave.Browser https://web.whatsapp.com"
+alias tg="flatpak run com.brave.Browser https://web.telegram.org"
+alias zed="flatpak run dev.zed.Zed"
+
 # Package specific
-alias bb="brave"
+alias bb="flatpak run com.brave.Browser"
 alias cclip="wl-copy"
 alias cdtemp='cd $(mktemp -d -p ~/code/)'
 alias cdtemp='cd $(mktemp -d)'
@@ -24,7 +31,6 @@ alias gpom="git pull origin main"
 alias ccp="g++ -std=c++20"
 alias ifconfig="ip addr" # net-tools is depreciated, so an illegal workaround
 alias lstpkgs="pacman -Qei | awk '/^Name/ { name=\$3 } /^Groups/ { if ( \$3 != \"base\" && \$3 != \"base-devel\" ) { print name } }'"
-
 alias pl="perl"
 alias pp="python3"
 alias vi='nvim'
