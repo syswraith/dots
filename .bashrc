@@ -19,7 +19,7 @@ alias tw="flatpak run com.brave.Browser https://x.com"
 alias ig="flatpak run com.brave.Browser https://instagram.com"
 alias wa="flatpak run com.brave.Browser https://web.whatsapp.com"
 alias tg="flatpak run com.brave.Browser https://web.telegram.org"
-alias zed="flatpak run dev.zed.Zed"
+#alias zed="flatpak run dev.zed.Zed"
 
 # Package specific
 alias bb="flatpak run com.brave.Browser"
