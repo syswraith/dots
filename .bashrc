@@ -9,6 +9,7 @@ export VISUAL='nvim'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias ll='ls -al --color=auto'
+alias apt='dnf'
 
 # SSH connections
 alias telehack="ssh rflash@telehack.com -p 6668"
@@ -35,6 +36,7 @@ alias pl="perl"
 alias pp="python3"
 alias vi='nvim'
 alias cat='bat'
+alias z="zoxide"
 alias bathelp='bat --plain --language=help'
 alias open='xdg-open'
 
@@ -95,3 +97,7 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 
 # Cordova (installed via Bun)
 export PATH=$PATH:/home/syswraith/.bun/bin
+export PATH="$PATH:$(go env GOPATH)/bin"
+
+eval "$(zoxide init bash)"
+export PATH=/home/syswraith/.local/xonsh-env/xbin:$PATH
