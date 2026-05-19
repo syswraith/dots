@@ -8,5 +8,3 @@ set hlsearch
 
 filetype plugin indent on
 syntax enable
-
-command C80 set cc=80

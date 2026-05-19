@@ -99,5 +99,14 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:/home/syswraith/.bun/bin
 export PATH="$PATH:$(go env GOPATH)/bin"
 
+export PATH=$PATH:/home/syswraith/.cargo/bin
+
 eval "$(zoxide init bash)"
 export PATH=/home/syswraith/.local/xonsh-env/xbin:$PATH
+export PATH="$HOME/.npm-global/bin:$PATH"
+
+export DESKTOP_FILES=/home/syswraith/.local/share/applications/
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
