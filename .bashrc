@@ -110,3 +110,7 @@ export DESKTOP_FILES=/home/syswraith/.local/share/applications/
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+/usr/bin/cat /home/syswraith/.plan
+export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/go/bin
