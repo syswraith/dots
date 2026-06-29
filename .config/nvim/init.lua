@@ -1,2 +1,3 @@
--- bootstrap lazy.nvim, LazyVim and your plugins
+require("syswraith.set")
 require("config.lazy")
+require("config.keymaps")
