@@ -4,25 +4,25 @@ return {
     config = function()
         local ts = require("nvim-treesitter")
 
-        -- 1. Setup the plugin
         ts.setup({
             install_dir = vim.fn.stdpath("data") .. "/site"
         })
-        
-        -- 2. Cleanly install your needed parsers
-        ts.install({
-            "lua",
-            "go",
-            "python",
-            "typescript",
-            "c",
-            "cpp",
-            "vim",
-            "vimdoc",
-            "query"
-        })
 
-        -- 3. Enable native syntax highlighting for these file types
+        -- Dynamically check and install only missing parsers to optimize startup
+        local missing = {}
+        local installed = ts.get_installed()
+        local desired = { "lua", "go", "python", "typescript", "c", "cpp", "vim", "vimdoc", "query" }
+        for _, lang in ipairs(desired) do
+            if not vim.list_contains(installed, lang) then
+                table.insert(missing, lang)
+            end
+        end
+
+        if #missing > 0 then
+            ts.install(missing)
+        end
+
+        -- Enable native syntax highlighting for these file types
         vim.api.nvim_create_autocmd("FileType", {
             pattern = { "lua", "go", "python", "typescript", "c", "cpp", "vim", "query" },
             callback = function()
