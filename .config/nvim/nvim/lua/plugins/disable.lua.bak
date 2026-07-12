@@ -1,8 +1,0 @@
-return {
-  { "nvim-lualine/lualine.nvim", enabled = false },
-  { "akinsho/bufferline.nvim", enabled = false },
-  { "goolord/alpha-nvim", enabled = false },
-  { "folke/noice.nvim", enabled = false },
-  { "rcarriga/nvim-notify", enabled = false },
-  { "nvim-tree/nvim-web-devicons", enabled = false },
-}
