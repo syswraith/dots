@@ -4,7 +4,8 @@ return {
     config = function()
         require("gruvbox").setup({
             transparent_mode = true,
-            contrast = "hard",
+            terminal_colors = true,
+            contrast = "soft",
             bold = true,
             italic = {
                 strings = false,

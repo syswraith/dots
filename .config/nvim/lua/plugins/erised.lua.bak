@@ -1,0 +1,5 @@
+return {
+    "syswraith/erised.nvim",
+    config = true,
+    lazy = false
+}
