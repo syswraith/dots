@@ -17,20 +17,19 @@ alias telehack="ssh rflash@telehack.com -p 6668"
 alias ctrlc="ssh fey@ctrl-c.club"
 
 # Browser shortcuts
-alias tw="flatpak run com.brave.Browser https://x.com"
-alias ig="flatpak run com.brave.Browser https://instagram.com"
-alias wa="flatpak run com.brave.Browser https://web.whatsapp.com"
-alias tg="flatpak run com.brave.Browser https://web.telegram.org"
-#alias zed="flatpak run dev.zed.Zed"
+alias tw="brave https://x.com"
+alias ig="brave https://instagram.com"
+alias wa="brave https://web.whatsapp.com"
+alias tg="brave https://web.telegram.org"
 
 # Package specific
-alias bb="flatpak run com.brave.Browser"
+alias bb="brave"
 alias cclip="wl-copy"
 alias cdtemp='cd $(mktemp -d -p ~/code/)'
-alias cdtemp='cd $(mktemp -d)'
+alias temp='cd $(mktemp -d)'
 alias gittt="git add . && git commit -m \"$(date)\" && git push"
-alias gpom="git pull origin main"
-alias ccp="g++ -std=c++20"
+alias gpom="git pull origin"
+alias ccc="g++ -std=c++20"
 alias ifconfig="ip addr" # net-tools is depreciated, so an illegal workaround
 alias lstpkgs="pacman -Qei | awk '/^Name/ { name=\$3 } /^Groups/ { if ( \$3 != \"base\" && \$3 != \"base-devel\" ) { print name } }'"
 alias pl="perl"
@@ -41,8 +40,21 @@ alias z="zoxide"
 alias bathelp='bat --plain --language=help'
 alias open='xdg-open'
 
+# Environment variables
+PS1='\$ '
+HISTTIMEFORMAT="%F %T "
+gh="https://github.com/syswraith"
+
 colossus() { rga $(printf -- '-e %q ' "$@") ~/Documents/colossus/; }
 help() { "$@" --help 2>&1 | bathelp; }
+
+nvim() {
+  if [ $# -eq 0 ]; then
+    command nvim .
+  else
+    command nvim "$@"
+  fi
+}
 
 # Yazi file manager
 alias yy="yazi"
@@ -55,11 +67,6 @@ function ycd() {
   rm -f -- "$tmp"
 }
 
-# Environment variables
-PS1='\$ '
-HISTTIMEFORMAT="%F %T "
-gh="https://github.com/syswraith"
-
 # For hassle-free creation of venvs in python
 pyvenv() {
   if [[ "$1" == "on" ]]; then
@@ -70,6 +77,7 @@ pyvenv() {
     python3 -m venv venv && source ./venv/bin/activate
   fi
 }
+
 
 # For managing the backlight on my laptop
 backlight() {
@@ -112,6 +120,9 @@ export DESKTOP_FILES=/home/syswraith/.local/share/applications/
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-/usr/bin/cat /home/syswraith/.plan
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/go/bin
+
+/usr/bin/cat /home/syswraith/.plan
+
+source /usr/share/blesh/ble.sh
