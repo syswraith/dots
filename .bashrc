@@ -125,4 +125,4 @@ export PATH=$PATH:$HOME/go/bin
 
 /usr/bin/cat /home/syswraith/.plan
 
-source /usr/share/blesh/ble.sh
+# source /usr/share/blesh/ble.sh
