@@ -19,7 +19,7 @@ set $term kitty
 #set $menu wmenu-run
 set $menu wofi
 set $flatpak flatpak
-set $browser brave-browser-stable
+set $browser brave
 set $swayss "/home/syswraith/.local/bin/sway-screenshot"
 
 default_border pixel 0

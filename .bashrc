@@ -10,6 +10,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias ll='ls -al --color=auto'
 alias apt='dnf'
+alias tmux="tmux -u"
 
 # SSH connections
 alias telehack="ssh rflash@telehack.com -p 6668"
