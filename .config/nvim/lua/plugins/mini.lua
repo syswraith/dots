@@ -16,11 +16,11 @@ return {
         require("mini.hipatterns").setup()
 --        require("mini.notify").setup()
         require("mini.align").setup()
-        require("mini.starter").setup({
-            header = header,
-            items  = { require('mini.starter').sections.builtin_actions()},
-            footer = '',
-        })
+--        require("mini.starter").setup({
+--            header = header,
+--            items  = { require('mini.starter').sections.builtin_actions()},
+--            footer = '',
+--        })
     end,
 }
 
