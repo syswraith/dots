@@ -1,6 +1,18 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Keep text indicators AND force block cursors
+set show-mode-in-prompt on
+
+# Insert Mode: Blinking Block + your custom text
+bind 'set vi-ins-mode-string "\1\e[1 q\2(ins) "'
+
+# Command Mode: Steady Block + your custom text
+bind 'set vi-cmd-mode-string "\1\e[2 q\2(cmd) "'
+
+# Start the terminal as a block cursor
+echo -ne "\e[1 q"
+
 set -o vi
 
 # Vim supremacy
@@ -127,4 +139,5 @@ export PATH=$PATH:$HOME/go/bin
 
 /usr/bin/cat /home/syswraith/.plan
 
-# source /usr/share/blesh/ble.sh
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
