@@ -1,19 +1,16 @@
 window {
-
-    margin: 0px;
-    border: 1px solid #928374;
+    margin: 10px;
     background-color: #282828;
+    border: 1px solid #ebdbb2;
 }
 
 #input {
-    margin: 5px;
-    border: none;
+    background-color: #282828;
     color: #ebdbb2;
-    background-color: #1d2021;
+    border: none;
 }
 
 #inner-box {
-    margin: 5px;
     border: none;
     background-color: #282828;
 }
@@ -36,5 +33,5 @@ window {
 }
 
 #entry:selected {
-    background-color: #1d2021;
+    background-color: #282828;
 }

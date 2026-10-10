@@ -13,9 +13,9 @@ bind 'set vi-cmd-mode-string "\1\e[2 q\2(cmd) "'
 # Start the terminal as a block cursor
 echo -ne "\e[1 q"
 
-set -o vi
-
 # Vim supremacy
+set -o vi
+alias vi='nvim'
 export EDITOR='nvim'
 export VISUAL='nvim'
 
@@ -23,24 +23,12 @@ export VISUAL='nvim'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias ll='ls -al --color=auto'
-alias apt='dnf'
+alias apt='pacman'
 alias tmux="tmux -u"
-
-# SSH connections
 alias telehack="ssh rflash@telehack.com -p 6668"
 alias ctrlc="ssh fey@ctrl-c.club"
-
-# Browser shortcuts
-alias tw="brave https://x.com"
-alias ig="brave https://instagram.com"
-alias wa="brave https://web.whatsapp.com"
-alias tg="brave https://web.telegram.org"
-
-# Package specific
-alias bb="brave"
 alias cclip="wl-copy"
-alias cdtemp='cd $(mktemp -d -p ~/code/)'
-alias temp='cd $(mktemp -d)'
+alias cdtemp='cd $(mktemp -d)'
 alias gittt="git add . && git commit -m \"$(date)\" && git push"
 alias gpom="git pull origin"
 alias ccc="g++ -std=c++20"
@@ -48,18 +36,18 @@ alias ifconfig="ip addr" # net-tools is depreciated, so an illegal workaround
 alias lstpkgs="pacman -Qei | awk '/^Name/ { name=\$3 } /^Groups/ { if ( \$3 != \"base\" && \$3 != \"base-devel\" ) { print name } }'"
 alias pl="perl"
 alias pp="python3"
-alias vi='nvim'
+alias webserve="python3 -m http.server -d"
 alias cat='bat'
 alias z="zoxide"
 alias bathelp='bat --plain --language=help'
 alias open='xdg-open'
+alias nvimcfg="nvim $HOME/.config/nvim/"
+alias swaycfg="nvim $HOME/.config/sway/"
 
-# Environment variables
 PS1='\$ '
 HISTTIMEFORMAT="%F %T "
 gh="https://github.com/syswraith"
 
-colossus() { rga $(printf -- '-e %q ' "$@") ~/Documents/colossus/; }
 help() { "$@" --help 2>&1 | bathelp; }
 
 nvim() {
@@ -104,40 +92,20 @@ backlight() {
   fi
 }
 
-# Created by `pipx` on 2025-02-13 19:06:28
-export PATH="$PATH:/home/syswraith/.local/bin"
-
-export YDOTOOL_SOCKET="$HOME/.ydotool_socket"
-export PATH="$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH"
-
-# Android SDK
-export ANDROID_HOME=/usr/lib/android-sdk
-export ANDROID_SDK_ROOT=$ANDROID_HOME
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/emulator
-
-# Cordova (installed via Bun)
-export PATH=$PATH:/home/syswraith/.bun/bin
-export PATH="$PATH:$(go env GOPATH)/bin"
-
-export PATH=$PATH:/home/syswraith/.cargo/bin
-
 eval "$(zoxide init bash)"
-export PATH=/home/syswraith/.local/xonsh-env/xbin:$PATH
+
+export PATH="$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
-
-export DESKTOP_FILES=/home/syswraith/.local/share/applications/
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
+export PATH="$PATH:$(go env GOPATH)/bin"
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:/home/syswraith/.bun/bin
+export PATH=$PATH:/home/syswraith/.cargo/bin
+export PATH="$PATH:/home/syswraith/.local/bin"
+export DESKTOP_FILES=/home/syswraith/.local/share/applications/
 
 /usr/bin/cat /home/syswraith/.plan
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"

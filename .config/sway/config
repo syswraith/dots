@@ -19,7 +19,7 @@ set $term kitty
 #set $menu wmenu-run
 set $menu wofi
 set $flatpak flatpak
-set $browser brave
+set $browser firefox
 set $swayss "/home/syswraith/.local/bin/sway-screenshot"
 
 default_border pixel 0
@@ -92,7 +92,7 @@ bindsym $mod+t exec $term
 bindsym $mod+q kill
 
 # Start your launcher
-bindsym $mod+m exec "$menu --show=drun"
+bindsym $mod+space exec "$menu --show=drun"
 bindsym $mod+c exec "$menu --show=run"
 #bindsym $mod+d exec $menu
 
@@ -212,7 +212,7 @@ bindsym $mod+f fullscreen
 bindsym $mod+Shift+space floating toggle
 
 # Swap focus between the tiling area and the floating area
-bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle
 
 # Move focus to the parent container
 bindsym $mod+a focus parent

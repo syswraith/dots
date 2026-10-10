@@ -1,0 +1,7 @@
+gtk_dark=true
+allow_images=true
+width=600px
+height=600px
+key_expand=Tab
+key_exit=Escape
+prompt=
