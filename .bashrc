@@ -43,6 +43,8 @@ alias bathelp='bat --plain --language=help'
 alias open='xdg-open'
 alias nvimcfg="nvim $HOME/.config/nvim/"
 alias swaycfg="nvim $HOME/.config/sway/"
+alias hx="helix"
+alias todo="nvim todo.md"
 
 PS1='\$ '
 HISTTIMEFORMAT="%F %T "
