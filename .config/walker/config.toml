@@ -1,0 +1,13 @@
+force_keyboard_focus = true
+theme = "gruvbox"
+
+[providers]
+default = [
+    "desktopapplications",
+    "files",
+    "calc",
+    "runner",
+]
+
+max_results = 10
+ignore_preview = ["files", "desktopapplications", "calc", "websearch"]

@@ -17,9 +17,10 @@ set $right l
 set $term kitty
 # Your preferred application launcher
 #set $menu wmenu-run
-set $menu wofi
+set $menu walker
+set $wofi wofi
 set $flatpak flatpak
-set $browser firefox
+set $browser brave
 set $swayss "/home/syswraith/.local/bin/sway-screenshot"
 
 default_border pixel 0
@@ -92,9 +93,9 @@ bindsym $mod+t exec $term
 bindsym $mod+q kill
 
 # Start your launcher
-bindsym $mod+space exec "$menu --show=drun"
-bindsym $mod+c exec "$menu --show=run"
-#bindsym $mod+d exec $menu
+bindsym $mod+space exec $menu
+bindsym $mod+c exec "$menu -m runner"
+bindsym $mod+d exec "$wofi --show=drun"
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
@@ -271,6 +272,7 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 #
 # Read `man 5 sway-bar` for more information about this section.
 exec waybar
+exec walker --gapplication-service
 # bar {
 #     position top
 # 
