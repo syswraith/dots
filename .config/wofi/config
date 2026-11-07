@@ -5,3 +5,5 @@ height=600px
 key_expand=Tab
 key_exit=Escape
 prompt=
+orientation=vertical
+halign=fill

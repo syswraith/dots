@@ -4,12 +4,6 @@
 # Keep text indicators AND force block cursors
 set show-mode-in-prompt on
 
-# Insert Mode: Blinking Block + your custom text
-bind 'set vi-ins-mode-string "\1\e[1 q\2(ins) "'
-
-# Command Mode: Steady Block + your custom text
-bind 'set vi-cmd-mode-string "\1\e[2 q\2(cmd) "'
-
 # Start the terminal as a block cursor
 echo -ne "\e[1 q"
 
@@ -45,6 +39,7 @@ alias nvimcfg="nvim $HOME/.config/nvim/"
 alias swaycfg="nvim $HOME/.config/sway/"
 alias hx="helix"
 alias todo="nvim todo.md"
+alias yy="yazi"
 
 PS1='\$ '
 HISTTIMEFORMAT="%F %T "
@@ -60,8 +55,6 @@ nvim() {
   fi
 }
 
-# Yazi file manager
-alias yy="yazi"
 function ycd() {
   tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
   yazi --cwd-file="$tmp" "$@"
@@ -82,7 +75,6 @@ pyvenv() {
   fi
 }
 
-
 # For managing the backlight on my laptop
 backlight() {
   if [[ "$1" == "up" ]]; then
@@ -94,7 +86,16 @@ backlight() {
   fi
 }
 
+furl() {
+  XDG_RUNTIME_DIR=/run/user/$(id -u) WAYLAND_DISPLAY=wayland-0 nohup xdg-open "$1" >/dev/null 2>&1 &
+}
+
+# if [ -z "$TERM_HANDLER" ] && command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+#   exec tmux -u
+# fi
+
 eval "$(zoxide init bash)"
+eval "$(fzf --bash)"
 
 export PATH="$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
@@ -105,9 +106,13 @@ export PATH=$PATH:/home/syswraith/.bun/bin
 export PATH=$PATH:/home/syswraith/.cargo/bin
 export PATH="$PATH:/home/syswraith/.local/bin"
 export DESKTOP_FILES=/home/syswraith/.local/share/applications/
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+export LC_ALL=en_IN.UTF-8
+export LANG=en_IN.UTF-8
+
+export FZF_CTRL_T_COMMAND=""
+# Enable a side preview window for fzf using bat
+export FZF_CTRL_T_OPTS="--preview 'cat {}' --preview-window=right:60%:wrap"
 
 /usr/bin/cat /home/syswraith/.plan
-
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
-export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
