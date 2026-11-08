@@ -10,6 +10,7 @@ set $browser brave
 set $menu fuzzel
 
 font pango:Jetbrains Mono 20
+exec mako
 
 ### Output configuration
 output eDP-1 mode 1920x1080@144Hz position 0,0 scale 1
@@ -35,6 +36,7 @@ input "1267:12926:ELAN06FA:00_04F3:327E_Touchpad" {
 
 ### Key bindings
 bindsym $mod+Return exec $term
+bindsym $mod+f4 exec wlogout
 bindsym $mod+Shift+Return exec prime-run $term
 bindsym $mod+shift+b exec prime-run $browser
 bindsym $mod+q kill

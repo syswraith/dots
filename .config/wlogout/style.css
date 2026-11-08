@@ -1,0 +1,63 @@
+* {
+    background-image: none;
+    box-shadow: none;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+window {
+    /* Main Dark background with 85% opacity */
+    background-color: rgba(40, 40, 40, 0.85);
+}
+
+button {
+    border-radius: 8px;
+    border: 2px solid #fabd2f;
+    background-color: #282828;
+    color: #fabd2f;
+    margin: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+button:focus,
+button:active {
+    background-color: #fabd2f;
+    color: #282828;
+    outline: none;
+}
+
+/* Hover effect applying the yellow-white accent across all buttons */
+button:hover {
+    background-color: #fabd2f;
+    color: #282828;
+    border-color: #fabd2f;
+}
+
+/* Base Icon Bindings */
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"));
+}
+
+#hibernate {
+    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"));
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"));
+}
