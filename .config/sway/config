@@ -38,11 +38,15 @@ input "1267:12926:ELAN06FA:00_04F3:327E_Touchpad" {
     natural_scroll enabled
 }
 
+input "1133:16418:Logitech_Wireless_Mouse_PID:4022" {
+    left_handed enabled
+}
+
+
 ### Key bindings
 bindsym $mod+Return exec $term
 bindsym $mod+f4 exec wlogout
-bindsym $mod+Shift+Return exec prime-run $term
-bindsym $mod+shift+b exec prime-run $browser
+bindsym $mod+Shift+Return exec $browser
 bindsym $mod+q kill
 bindsym $mod+space exec $menu
 bindsym $mod+Shift+r reload
@@ -101,8 +105,10 @@ bindsym $mod+Shift+0 move container to workspace number 10
 
 # Layout stuff:
 # Split layout
-bindsym $mod+b splith
-bindsym $mod+v splitv
+# vertical split -> panes side-by-side (divider vertical)
+# horizontal split -> panes stacked (divider horizontal)
+bindsym $mod+v splith
+bindsym $mod+b splitv
 
 # Switch layouts
 bindsym $mod+w layout tabbed
