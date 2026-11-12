@@ -116,3 +116,4 @@ export FZF_CTRL_T_COMMAND=""
 export FZF_CTRL_T_OPTS="--preview 'cat {}' --preview-window=right:60%:wrap"
 
 /usr/bin/cat /home/syswraith/.plan
+export JAVA_HOME=/usr/lib/jvm/$(archlinux-java get)
