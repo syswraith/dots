@@ -1,0 +1,19 @@
+alpha = 100
+
+[templates]
+sway.template = 'sway-colors.conf'
+sway.target = '~/.config/sway/colors.conf'
+fuzzel.template = 'fuzzel.ini'
+fuzzel.target = '~/.config/fuzzel/fuzzel.ini'
+swaylock.template = 'swaylock'
+swaylock.target = '~/.config/swaylock/config'
+waybar.template = 'waybar-colors.css'
+waybar.target = '~/.config/waybar/colors.css'
+mako.template = 'mako'
+mako.target = '~/.config/mako/config'
+swaynag.template = 'swaynag'
+swaynag.target = '~/.config/swaynag/config'
+
+[hooks]
+sway = "swaymsg reload 2>/dev/null || true"
+mako = "makoctl reload 2>/dev/null || true"

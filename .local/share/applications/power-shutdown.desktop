@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Shutdown
+Comment=Power off the computer
+Exec=/usr/bin/systemctl poweroff
+Icon=power-shutdown
+Terminal=false
+StartupNotify=false
+Categories=System;
+Keywords=power;off;halt;

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Log Out
+Comment=End the current user session
+Exec=sh -c "exec /usr/bin/loginctl terminate-user \\$USER"
+Icon=power-logout
+Terminal=false
+StartupNotify=false
+Categories=System;
+Keywords=logout;exit;session;

@@ -1,0 +1,40 @@
+color=#{{ background | strip }}{{ alpha | alpha_hexa }}
+scaling=solid_color
+font=JetBrains Mono
+font-size=24
+indicator-radius=60
+indicator-thickness=10
+
+inside-color=#{{ background | strip }}{{ alpha | alpha_hexa }}
+inside-clear-color=#{{ background | strip }}{{ alpha | alpha_hexa }}
+inside-caps-lock-color=#{{ color9 | strip }}{{ alpha | alpha_hexa }}
+inside-ver-color=#{{ color0 | lighten(0.1) | strip }}{{ alpha | alpha_hexa }}
+inside-wrong-color=#{{ background | strip }}{{ alpha | alpha_hexa }}
+
+ring-color=#{{ color3 | strip }}{{ alpha | alpha_hexa }}
+ring-clear-color=#{{ color2 | strip }}{{ alpha | alpha_hexa }}
+ring-caps-lock-color=#{{ color9 | strip }}{{ alpha | alpha_hexa }}
+ring-ver-color=#{{ color11 | strip }}{{ alpha | alpha_hexa }}
+ring-wrong-color=#{{ color1 | strip }}{{ alpha | alpha_hexa }}
+
+line-color=00000000
+line-clear-color=00000000
+line-caps-lock-color=00000000
+line-ver-color=00000000
+line-wrong-color=00000000
+
+key-hl-color=#{{ color3 | strip }}{{ alpha | alpha_hexa }}
+bs-hl-color=#{{ color9 | strip }}{{ alpha | alpha_hexa }}
+caps-lock-key-hl-color=#{{ color11 | strip }}{{ alpha | alpha_hexa }}
+caps-lock-bs-hl-color=#{{ color9 | strip }}{{ alpha | alpha_hexa }}
+separator-color=00000000
+
+text-color=#{{ foreground | strip }}{{ alpha | alpha_hexa }}
+text-clear-color=#{{ color2 | strip }}{{ alpha | alpha_hexa }}
+text-caps-lock-color=#{{ color3 | strip }}{{ alpha | alpha_hexa }}
+text-ver-color=#{{ color15 | strip }}{{ alpha | alpha_hexa }}
+text-wrong-color=#{{ color1 | strip }}{{ alpha | alpha_hexa }}
+
+show-failed-attempts
+indicator-caps-lock
+hide-keyboard-layout

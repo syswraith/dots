@@ -1,0 +1,14 @@
+font=JetBrains Mono 12
+edge=top
+background={{ background | strip }}
+border={{ color3 | strip }}
+border-bottom={{ color3 | strip }}
+border-bottom-size=2
+text={{ foreground | strip }}
+button-background={{ color0 | lighten(0.2) | strip }}
+button-text={{ foreground | strip }}
+button-border-size=1
+button-gap=8
+message-padding=16
+button-padding=8
+details-background={{ background | strip }}

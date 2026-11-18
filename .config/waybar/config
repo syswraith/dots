@@ -1,39 +1,38 @@
 {
+    "position": "bottom",
     "layer": "top",
+    "mode": "hide",
+    "modifier-reset": "release",
+    "ipc": true,
+    "reload_style_on_change": true,
+    "exclusive": false,
+    "height": 60,
     "spacing": 0,
-    "height": 0,
-
-    "margin-top": 0,
-    "margin-right": 0,
-    "margin-bottom": 0,
-    "margin-left": 0,
-
-    "modules-left": [
-        "sway/workspaces"
-    ],
+    "margin-bottom": 16,
 
     "modules-center": [
-        "clock"
+        "group/bar"
     ],
 
-    "modules-right": [
-        "tray",
-        "cpu_text",
-        "cpu",
-        "memory",
-        "battery",
-        "network",
-        "pulseaudio"
-    ],
+    "group/bar": {
+        "orientation": "horizontal",
+        "modules": [
+            "sway/workspaces",
+            "clock",
+            "tray",
+            "cpu",
+            "memory",
+            "temperature",
+            "pulseaudio",
+            "network",
+            "battery",
+            "backlight"
+        ]
+    },
 
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
-        "tooltip": false
-    },
-
-    "tray": {
-        "spacing": 10,
         "tooltip": false
     },
 
@@ -42,26 +41,59 @@
         "tooltip": false
     },
 
-    "cpu": {
-        "format": "cpu {usage}%",
-        "interval": 2,
+    "tray": {
+        "spacing": 8,
+        "tooltip": false
+    },
 
+    "cpu": {
+        "format": "<span foreground='#FABD2F'></span> {usage}%",
+        "interval": 2,
         "states": {
             "critical": 90
         }
     },
 
     "memory": {
-        "format": "mem {percentage}%",
+        "format": "<span foreground='#FABD2F'>󰍛</span> {percentage}%",
         "interval": 2,
-
         "states": {
             "critical": 80
         }
     },
 
+    "temperature": {
+        "hwmon-by-name": "k10temp",
+        "input-filename": "temp1_input",
+        "format": "<span foreground='#FABD2F'></span> {temperatureC}°C",
+        "interval": 5,
+        "warning-threshold": 75,
+        "critical-threshold": 90,
+        "tooltip": false
+    },
+
+    "pulseaudio": {
+        "format": "<span foreground='#FABD2F'>{icon}</span> {volume}%",
+        "format-muted": "<span foreground='#FABD2F'></span> mute",
+        "format-icons": {
+            "default": ["", ""]
+        },
+        "scroll-step": 5,
+        "max-volume": 150,
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+
+    "network": {
+        "format-wifi": "<span foreground='#FABD2F'></span> {signalStrength}%",
+        "format-ethernet": "<span foreground='#FABD2F'></span> up",
+        "format-disconnected": "<span foreground='#FABD2F'></span>",
+        "tooltip": false
+    },
+
     "battery": {
-        "format": "{capacity}%",
+        "format": "<span foreground='#FABD2F'>{icon}</span> {capacity}%",
+        "format-icons": ["", "", "", "", ""],
         "interval": 5,
         "states": {
             "warning": 20,
@@ -70,20 +102,11 @@
         "tooltip": false
     },
 
-    "network": {
-        "format-wifi" : "wifi up",
-        "format-ethernet": "enth up",
-        "format-disconnected" : "no network",
-        "tooltip": false
-    },
-
-    "pulseaudio": {
+    "backlight": {
+        "device": "nvidia_0",
+        "format": "<span foreground='#FABD2F'></span> {percent}%",
+        "interval": 2,
         "scroll-step": 5,
-        "max-volume": 150,
-        "format": "vol {volume}%",
-        "format-bluetooth": "vol {volume}%",
-        "nospacing": 1,
-        "on-click": "pavucontrol",
         "tooltip": false
     }
 }

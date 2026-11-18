@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Suspend
+Comment=Suspend the computer to memory
+Exec=/usr/bin/systemctl suspend
+Icon=power-suspend
+Terminal=false
+StartupNotify=false
+Categories=System;
+Keywords=power;sleep;

@@ -1,0 +1,9 @@
+@define-color bg {{ background }};
+@define-color fg {{ foreground }};
+@define-color muted {{ color8 }};
+@define-color accent {{ color3 }};
+@define-color accent-alt {{ color11 }};
+@define-color success {{ color2 }};
+@define-color warning {{ color9 }};
+@define-color danger {{ color1 }};
+@define-color border {{ foreground }};

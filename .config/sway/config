@@ -6,8 +6,8 @@ set $down j
 set $up k
 set $right l
 
-set $term kitty
-set $browser brave 
+set $term alacritty
+set $browser helium-browser
 set $menu fuzzel
 
 font pango:Jetbrains Mono 20
@@ -15,6 +15,9 @@ font pango:Jetbrains Mono 20
 exec mako
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec systemctl --user start xdg-desktop-portal-gtk xdg-desktop-portal
+exec_always ~/.config/sway/bar-workspace-watch.py
+exec swayidle -w lock 'swaylock -f'
+exec wallust theme base16-gruvbox-soft-dark -q --no-hooks
 
 ### Output configuration
 output eDP-1 mode 1920x1080@144Hz position 0,0 scale 1
@@ -58,20 +61,27 @@ input * {
 }
 
 # Volume control (PipeWire / WirePlumber)
-bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
-bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec sh -c 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+; ~/.config/sway/bar-reveal.sh'
+bindsym XF86AudioLowerVolume exec sh -c 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; ~/.config/sway/bar-reveal.sh'
+bindsym XF86AudioMute exec sh -c 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; ~/.config/sway/bar-reveal.sh'
 
 # Brightness control (brightnessctl)
-bindsym XF86MonBrightnessUp exec brightnessctl set 10%+
-bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+bindsym XF86MonBrightnessUp exec sh -c 'brightnessctl set 10%+; ~/.config/sway/bar-reveal.sh'
+bindsym XF86MonBrightnessDown exec sh -c 'brightnessctl set 10%-; ~/.config/sway/bar-reveal.sh'
 
 # Move your focus around
 bindsym $mod+$left focus left
 bindsym $alt+Tab focus right
+bindsym $alt+Shift+Tab focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
+
+# Make workspace tabbed by default
+workspace_layout tabbed
+include ~/.config/sway/colors.conf
+
+
 
 # Move the focused window with the same, but add Shift
 bindsym $mod+Shift+$left move left
@@ -138,10 +148,14 @@ bindsym Shift+Print exec grim - | tee "$HOME/Pictures/Screenshot-$(date +%Y%m%d-
 
 bar {
     swaybar_command waybar
+    mode hide
+    modifier Mod4
 }
 
 default_border pixel 0
 default_floating_border pixel 0
 titlebar_border_thickness 0
+
+
 
 include /etc/sway/config.d/*

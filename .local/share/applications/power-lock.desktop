@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Lock Session
+Comment=Lock the current session
+Exec=/usr/bin/loginctl lock-session
+Icon=power-lock
+Terminal=false
+StartupNotify=false
+Categories=System;
+Keywords=lock;security;session;

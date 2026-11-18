@@ -1,14 +1,15 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Keep text indicators AND force block cursors
-set show-mode-in-prompt on
-
 # Start the terminal as a block cursor
 echo -ne "\e[1 q"
 
 # Vim supremacy
 set -o vi
+
+# Keep text indicators
+set show-mode-in-prompt on
+
 alias vi='nvim'
 export EDITOR='nvim'
 export VISUAL='nvim'

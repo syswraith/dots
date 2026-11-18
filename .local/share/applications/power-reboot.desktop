@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Reboot
+Comment=Restart the computer
+Exec=/usr/bin/systemctl reboot
+Icon=power-reboot
+Terminal=false
+StartupNotify=false
+Categories=System;
+Keywords=power;restart;

@@ -1,0 +1,16 @@
+font=JetBrains Mono 12
+background-color=#{{ background | strip }}{{ alpha | alpha_hexa }}
+text-color=#{{ foreground | strip }}{{ alpha | alpha_hexa }}
+border-color=#{{ color3 | strip }}{{ alpha | alpha_hexa }}
+border-size=2
+border-radius=8
+padding=12
+margin=8
+outer-margin=16
+width=380
+default-timeout=5000
+
+[urgency=critical]
+background-color=#{{ color1 | strip }}{{ alpha | alpha_hexa }}
+text-color=#{{ background | strip }}{{ alpha | alpha_hexa }}
+border-color=#{{ color9 | strip }}{{ alpha | alpha_hexa }}

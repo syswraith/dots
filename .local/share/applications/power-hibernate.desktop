@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Hibernate
+Comment=Suspend the computer to disk
+Exec=/usr/bin/systemctl hibernate
+Icon=power-hibernate
+Terminal=false
+StartupNotify=false
+Categories=System;
+Keywords=power;disk;
